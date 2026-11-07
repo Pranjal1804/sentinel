@@ -1,0 +1,64 @@
+/* ── Extra themes (violet, rose, jade, ocean, solar, mono) ───────────────── */
+:root[data-theme="violet"]{--green:#bd8cff;--cyan:#74d9ff;--bg:#0b0812;--line:#30233e}
+:root[data-theme="rose"]  {--green:#ff75b5;--cyan:#ff9e8a;--bg:#12090f;--line:#3e2435}
+:root[data-theme="jade"]  {--green:#51e0ae;--cyan:#91edbd;--bg:#07110e;--line:#1f3930}
+:root[data-theme="ocean"] {--green:#55b9ff;--cyan:#52e2db;--bg:#06101a;--line:#1a3548}
+:root[data-theme="solar"] {--green:#ffd166;--cyan:#ff9f43;--bg:#120e08;--line:#40351f}
+:root[data-theme="mono"]  {--green:#e1e6e4;--cyan:#9ca8a4;--bg:#090b0b;--line:#303535}
+
+/* ── Sidebar / topbar tints ──────────────────────────────────────────────── */
+:root[data-theme="violet"] .sidebar,:root[data-theme="violet"] .topbar{background:#100b18}
+:root[data-theme="rose"]   .sidebar,:root[data-theme="rose"]   .topbar{background:#170b12}
+:root[data-theme="jade"]   .sidebar,:root[data-theme="jade"]   .topbar{background:#09130f}
+:root[data-theme="ocean"]  .sidebar,:root[data-theme="ocean"]  .topbar{background:#08121d}
+:root[data-theme="solar"]  .sidebar,:root[data-theme="solar"]  .topbar{background:#171108}
+:root[data-theme="mono"]   .sidebar,:root[data-theme="mono"]   .topbar{background:#0c0e0e}
+
+/* ── Panel / card gradients ──────────────────────────────────────────────── */
+:root[data-theme="violet"] .panel,:root[data-theme="violet"] .metric-card{background:linear-gradient(140deg,#181222,#0e0a16);border-color:#30233e}
+:root[data-theme="rose"]   .panel,:root[data-theme="rose"]   .metric-card{background:linear-gradient(140deg,#20121b,#120a10);border-color:#3e2435}
+:root[data-theme="jade"]   .panel,:root[data-theme="jade"]   .metric-card{background:linear-gradient(140deg,#101c17,#09120f);border-color:#1f3930}
+:root[data-theme="ocean"]  .panel,:root[data-theme="ocean"]  .metric-card{background:linear-gradient(140deg,#10202d,#08121d);border-color:#1a3548}
+:root[data-theme="solar"]  .panel,:root[data-theme="solar"]  .metric-card{background:linear-gradient(140deg,#211b10,#151006);border-color:#40351f}
+:root[data-theme="mono"]   .panel,:root[data-theme="mono"]   .metric-card{background:linear-gradient(140deg,#171a19,#0d0f0f);border-color:#303535}
+
+/* ── Live dot accent per theme ───────────────────────────────────────────── */
+:root[data-theme="violet"] .live-dot{background:#bd8cff;box-shadow:0 0 8px #bd8cff77}
+:root[data-theme="rose"]   .live-dot{background:#ff75b5;box-shadow:0 0 8px #ff75b577}
+:root[data-theme="jade"]   .live-dot{background:#51e0ae;box-shadow:0 0 8px #51e0ae77}
+:root[data-theme="ocean"]  .live-dot{background:#55b9ff;box-shadow:0 0 8px #55b9ff77}
+:root[data-theme="solar"]  .live-dot{background:#ffd166;box-shadow:0 0 8px #ffd16677}
+:root[data-theme="mono"]   .live-dot{background:#e1e6e4;box-shadow:0 0 8px #e1e6e477}
+
+/* ── brand-mark tint ─────────────────────────────────────────────────────── */
+:root[data-theme="violet"] .brand-mark{border-color:#4a2d7a;background:#1e1230}
+:root[data-theme="rose"]   .brand-mark{border-color:#7a2d4a;background:#2a1020}
+:root[data-theme="jade"]   .brand-mark{border-color:#1e6b4a;background:#0d241a}
+:root[data-theme="ocean"]  .brand-mark{border-color:#1e4a7a;background:#0d1e30}
+:root[data-theme="solar"]  .brand-mark{border-color:#7a5a1e;background:#2a2010}
+:root[data-theme="mono"]   .brand-mark{border-color:#445050;background:#182020}
+
+/* ── Theme swatch dots (all 9 themes) ────────────────────────────────────── */
+/* sentinel / default */
+.theme-swatch.sentinel{background:#b4f34d;box-shadow:0 0 12px #b4f34d66}
+.theme-swatch.violet  {background:#bd8cff;box-shadow:0 0 12px #bd8cff66}
+.theme-swatch.rose    {background:#ff75b5;box-shadow:0 0 12px #ff75b566}
+.theme-swatch.jade    {background:#51e0ae;box-shadow:0 0 12px #51e0ae66}
+.theme-swatch.ocean   {background:#55b9ff;box-shadow:0 0 12px #55b9ff66}
+.theme-swatch.solar   {background:#ffd166;box-shadow:0 0 12px #ffd16666}
+.theme-swatch.mono    {background:#e1e6e4;box-shadow:0 0 12px #e1e6e466}
+
+/* ── Security-tools scanner UI ───────────────────────────────────────────── */
+.scanner-install,.scanner-actions button{
+  background:#111a17;border:1px solid #34493a;color:var(--green);
+  padding:9px 12px;border-radius:4px;font:9px var(--mono);cursor:pointer;
+  letter-spacing:.5px;transition:border-color .15s,opacity .15s
+}
+.scanner-install:hover,.scanner-actions button:hover{border-color:var(--green)}
+.scanner-actions{display:flex;flex-wrap:wrap;gap:8px;margin-top:16px}
+.scanner-actions button:disabled,.scanner-install:disabled{opacity:.45;cursor:not-allowed}
+.scanner-result{
+  white-space:pre-wrap;overflow:auto;max-height:360px;
+  background:#080c0d;border:1px solid var(--line);
+  padding:12px;color:#a8b6b1;font:10px var(--mono);border-radius:5px
+}

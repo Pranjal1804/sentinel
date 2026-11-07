@@ -1,0 +1,24 @@
+export type Metric<T> = { value: T | null; source: string; available: boolean; detail: string | null };
+export type NetworkInterface = { name: string; addresses: string[]; rxBytes: number; txBytes: number; rxBytesPerSec: number; txBytesPerSec: number; rxPackets: number; txPackets: number; rxErrors: number; txErrors: number; rxDropped: number; txDropped: number; state: string };
+export type CoreUsage = { core: string; utilizationPercent: number };
+export type ProcessInfo = { pid: number; parentPid: number; name: string; executablePath: string | null; commandLine: string; userId: number; userName: string; groupId: number; cpuPercent: number | null; memoryBytes: number; state: string; threads: number; startTimeEpoch: number | null; startTimeTicks: number; securityIndicators: string[]; permissionLimited: boolean };
+export type SocketOwner = { pid: number; processName: string; userId: number | null };
+export type NetworkConnection = { protocol: string; localAddress: string; localPort: number; remoteAddress: string; remotePort: number; state: string; scope: string; inode: number; listening: boolean; owners: SocketOwner[] };
+export type ConnectionSnapshot = { observedAt: number; connections: NetworkConnection[]; socketVisibilityLimited: boolean };
+export type FailedService = { unit: string; description: string; loadState: string; activeState: string; subState: string };
+export type ServiceSnapshot = { observedAt: number; available: boolean; detail: string | null; services: FailedService[] };
+export type Temperature = { label: string; celsius: number; source: string };
+export type Telemetry = {
+  sampledAt: number;
+  cpuPercent: Metric<number>;
+  cpuCores: Metric<CoreUsage[]>;
+  cpuFrequencyMhz: Metric<number>;
+  memory: Metric<{ totalBytes: number; usedBytes: number; availableBytes: number; swapTotalBytes: number; swapUsedBytes: number }>;
+  disk: Metric<{ mount: string; filesystem: string; totalBytes: number; usedBytes: number; availableBytes: number }>;
+  diskIo: Metric<{ readBytesPerSec: number; writeBytesPerSec: number; devices: string[] }>;
+  network: Metric<NetworkInterface[]>;
+  temperatures: Metric<Temperature[]>;
+  gpu: Metric<{ vendor: string; activeFrequencyMhz: number | null; currentFrequencyMhz: number | null; utilizationPercent: number | null; utilizationDetail: string }>;
+  battery: Metric<{ name: string; capacityPercent: number; status: string; energyNowWh: number | null; energyFullWh: number | null; healthPercent: number | null }>;
+  host: { os: string; kernel: string; architecture: string; cpuModel: string; logicalCpus: number; gpu: string };
+};
